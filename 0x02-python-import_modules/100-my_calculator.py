@@ -11,16 +11,16 @@ def main():
     b = int(argv[3])
 
     if argv[2] == '+':
-        print("{} {} {} = {}".format(a, argv[2], b, add(a, b)))
+         print("{} {} {} = {}".format(a, argv[2], b, add(a, b)))
     elif argv[2] == '-':
-        print("{} {} {} = {}".format(a, argv[2], b, sub(a, b)))
+         print("{} {} {} = {}".format(a, argv[2], b, sub(a, b)))
     elif argv[2] == '*':
-        print("{} {} {} = {}".format(a, argv[2], b, mul(a, b)))
+         print("{} {} {} = {}".format(a, argv[2], b, mul(a, b)))
     elif argv[2] == '/':
-        print("{} {} {} = {}".format(a, argv[2], b, div(a, b)))
+         print("{} {} {} = {}".format(a, argv[2], b, div(a, b)))
     else:
-        print("Unknown operator. Available operators: +, -, * and /")
-            exit(1)
+         print("Unknown operator. Available operators: +, -, * and /")
+         exit(1)
 
 if __name__ == "__main__":
     main()
