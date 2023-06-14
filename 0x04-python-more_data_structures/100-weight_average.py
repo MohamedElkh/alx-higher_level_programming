@@ -8,6 +8,6 @@ def weight_average(my_list=[]):
 
     for tu in my_list:
         vg += (tu[0] * tu[1])
-        value += tu[1
-]
+        value += tu[1]
+
     return (vg / value)
