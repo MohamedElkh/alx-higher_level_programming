@@ -34,7 +34,7 @@ void print_python_bytes(PyObject *p)
 
 	for (x = 0; x < value; x++)
 	{
-		printf("%02hhx", bytes->ob_sval[x]);
+		printf("%02hhx", byte->ob_sval[x]);
 
 		if (x == (value - 1))
 		{
