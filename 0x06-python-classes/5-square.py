@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 class Square:
 
     def __init__(self, size=0):
@@ -13,6 +15,7 @@ class Square:
 
     @property
     def size(self):
+
         return self.__size
 
     @size.setter
@@ -31,11 +34,13 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
+
         if self.__size == 0:
             print()
             return None
 
         for x in range(1, self.area() + 1):
             print('#', end='')
+
             if x % self.__size == 0 and x > 0:
                 print()
