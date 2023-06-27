@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" define the class square """
 
 
 class Square:
+    """ represent the class square """
 
     def __init__(self, size=0, position=(0, 0)):
 
@@ -11,12 +13,12 @@ class Square:
 
     @property
     def size(self):
-
+        """ get the current value """
         return (self.__size)
 
     @size.setter
     def size(self, value):
-
+        """ set the current value """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
 
@@ -27,12 +29,12 @@ class Square:
 
     @property
     def position(self):
-
+        """ get the current value of the position """
         return (self.__position)
 
     @position.setter
     def position(self, value):
-
+        """ set the current value of the position """
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
@@ -43,35 +45,36 @@ class Square:
         self.__position = value
 
     def area(self):
-
+        """ function to define the area of self """
         return (self.__size * self.__size)
 
     def my_print(self):
-
+        """ func to print white space """
         if self.__size == 0:
+
             print("")
             return
 
-        [print("") for x in range(0, self.__position[1])]
+        [print("") for x in range(self.__position[1])]
 
-        for x in range(0, self.__size):
+        for x in range(self.__size):
 
-            [print(" ", end="") for i in range(0, self.__position[0])]
+            [print(" ", end="") for i in range(self.__position[0])]
 
-            [print("#", end="") for a in range(0, self.__size)]
+            [print("#", end="") for a in range(self.__size)]
             print("")
 
     def __str__(self):
-
+        """ func to print the value """
         if self.__size != 0:
 
-            [print("") for x in range(0, self.__position[1])]
+            [print("") for x in range(self.__position[1])]
 
-        for x in range(0, self.__size):
+        for x in range(self.__size):
 
-            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print(" ", end="") for j in range(self.__position[0])]
 
-            [print("#", end="") for k in range(0, self.__size)]
+            [print("#", end="") for k in range(self.__size)]
 
             if x != self.__size - 1:
 
