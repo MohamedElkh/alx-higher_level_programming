@@ -85,16 +85,16 @@ class Square:
 
         return False
 
-    def __check_integers(self, position):
+    def __check_values(self, position):
 
-        if type(position[0]) is int and type(position[1]) is int:
+        if position[0] >= 0 and position[1] >= 0:
             return True
 
         return False
 
-    def __check_values(self, position):
+    def __check_integers(self, position):
 
-        if position[0] >= 0 and position[1] >= 0:
+        if type(position[0]) is int and type(position[1]) is int:
             return True
 
         return False
@@ -110,6 +110,7 @@ class Square:
             return None
 
         if self.__position[1] > 0:
+
             for x in range(self.__position[1]):
                 print('')
 
