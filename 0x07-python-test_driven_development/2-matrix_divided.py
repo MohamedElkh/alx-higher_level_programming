@@ -17,6 +17,7 @@ def matrix_divided(matrix, div):
             not all(isinstance(r, list) for r in matrix) or
             not all((isinstance(el, int) or isinstance(el, float))
                     for el in [n for r in matrix for n in r])):
+
         raise TypeError("matrix must be a matrix (list of lists) of "
                         "integers/floats")
 

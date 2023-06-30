@@ -23,101 +23,100 @@ Notes:
     * There should be no space at the beginning or at the
     end of each printed line.
 
+Usage
+=====
 
-Section // Non-Parameters
-=========================
+``def text_indentation(...)``` returns text identate.
+---------------------
 
-Test case #0: A test case without parameters
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello?")
+    Hello?
+    <BLANKLINE>
+
+    >>> text_indentation("Hello?: Holberton?? School?  ")
+    Hello?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+
+
+    >>> text_indentation("Hello?: Holberton?    Software. School? !  ")
+    Hello?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    Holberton?
+    <BLANKLINE>
+    Software.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    !  
+
+
+    >>> text_indentation("hello:  " + ".wor?ld")
+    hello:
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    wor?
+    <BLANKLINE>
+    ld
+
+
+    >>> text_indentation("hello:  " + ".w.or?l:d" + str (34))
+    hello:
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    w.
+    <BLANKLINE>
+    or?
+    <BLANKLINE>
+    l:
+    <BLANKLINE>
+    d34
+
+    >>> text_indentation("hello:  " + ".wor?)?:fsa4?2")
+    hello:
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    wor?
+    <BLANKLINE>
+    )?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    fsa4?
+    <BLANKLINE>
+    2
+    
+Types of errors
+=====
+
+The function does not receive any numerical data (int, float)
+
+::
+    >>> text_indentation(44)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(str(44.?))
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+    >>> text_indentation(str(44.:holberton))
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
 
     >>> text_indentation()
     Traceback (most recent call last):
     TypeError: text_indentation() missing 1 required positional argument: 'text'
-
-
-Section // Correct Parameters
-=============================
-
-Test case #1: A test case with a short text
-
-    >>> text_indentation('Monty Python')
-    Monty Python
-
-Test case #2: A test case with a short text and a character for 2 new lines
-
-    >>> text_indentation('Ponty Mython?')
-    Ponty Mython?
-    <BLANKLINE>
-
-Test case #3: A test case with a short text and characters for 6 new lines
-
-    >>> text_indentation("Hello world. Monty Python? It's is:")
-    Hello world.
-    <BLANKLINE>
-    Monty Python?
-    <BLANKLINE>
-    It's is:
-    <BLANKLINE>
-
-Test case #4: A test case with a text with a special format
-
-    >>> text_indentation("""Bye world. \
-    ... Python Monty? \
-    ... Isn't""")
-    Bye world.
-    <BLANKLINE>
-    Python Monty?
-    <BLANKLINE>
-    Isn't
-
-Test case #5: A test case with only spaces and characters to prints newlines
-
-    >>> text_indentation("   ?:.   ")
-    ?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-
-Test case #6: Another test case with only spaces and characters to prints newlines
-
-    >>> text_indentation("  .??:?.  ")
-    .
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-
-Section // Incorrect Parameters
-===============================
-
-Test case #7: A test case with an integer parameter
-
-    >>> text_indentation(15)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-Test case #8: A test case with an boolean parameter
-
-    >>> text_indentation(True)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-Test case #9: A test case with a data type parameter
-
-    >>> text_indentation(str)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-Test case #10: A test case with an infinite float number
-
-    >>> text_indentation(1e400)
-    Traceback (most recent call last):
-    TypeError: text must be a string
