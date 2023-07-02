@@ -37,6 +37,7 @@ of ``m_a`` by ``m_b``.
 
 A minimum of two arguments must be provided.
 
+
 ::
 
     >>> print(lazy_matrix_mul(m_a))
@@ -49,6 +50,7 @@ A minimum of two arguments must be provided.
     Traceback (most recent call last):
     TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
     'm_a' and 'm_b'
+
 
 The function also works with floating-point numbers.
 
@@ -138,6 +140,7 @@ If either parameter is ``None``, a TypeError is raised.
 Not just any list - they *must* be lists of lists! Otherwise, behavior is
 undefined.
 
+
 ::
 
     >>> print(lazy_matrix_mul([1, 2], [[3, 4]]))
@@ -174,6 +177,7 @@ integers or floats! Otherwise, a ValueError or TypeError is raised
     >>> print(lazy_matrix_mul([[1, "non-number"]], [[{"a": 1}, 8.8]]))
     Traceback (most recent call last):
     TypeError: Object arrays are not currently supported
+
 
 Finally, the length of all rows in matrices ``m_a`` and ``m_b`` should be
 equivalent. Otherwise, a ValueError is raised.

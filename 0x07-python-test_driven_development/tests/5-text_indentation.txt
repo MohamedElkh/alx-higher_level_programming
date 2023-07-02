@@ -1,122 +1,40 @@
-# 5-text_indentation.txt
+The ``text_indentation`` module
+======================
 
-===============================
-4. Text indentation module
-===============================
+using ``text_indentation()``
 
-Import module:
-==============
+----------------------
+
+Testing import import text_indentation:
+=======================================
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 
-Function:
-=========
-Write a function that prints a text with 2 new lines after
-each of these characters: ., ? and :
+test normal:
+    >>> text_indentation("test? azer")
+    test?
+    <BLANKLINE>
+    azer
 
 
-Notes:
-===========
-    * text must be a string, otherwise raise a TypeError exception
-    with the message 'text must be a string'.
-
-    * There should be no space at the beginning or at the
-    end of each printed line.
-
-Usage
-=====
-
-``def text_indentation(...)``` returns text identate.
----------------------
-
->>> text_indentation = __import__('5-text_indentation').text_indentation
-    >>> text_indentation("Hello?")
-    Hello?
-    <BLANKLINE>
-
-    >>> text_indentation("Hello?: Holberton?? School?  ")
-    Hello?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-    Holberton?
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    School?
-    <BLANKLINE>
-
-
-    >>> text_indentation("Hello?: Holberton?    Software. School? !  ")
-    Hello?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-    Holberton?
-    <BLANKLINE>
-    Software.
-    <BLANKLINE>
-    School?
-    <BLANKLINE>
-    !  
-
-
-    >>> text_indentation("hello:  " + ".wor?ld")
-    hello:
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-    wor?
-    <BLANKLINE>
-    ld
-
-
-    >>> text_indentation("hello:  " + ".w.or?l:d" + str (34))
-    hello:
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-    w.
-    <BLANKLINE>
-    or?
-    <BLANKLINE>
-    l:
-    <BLANKLINE>
-    d34
-
-    >>> text_indentation("hello:  " + ".wor?)?:fsa4?2")
-    hello:
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-    wor?
-    <BLANKLINE>
-    )?
-    <BLANKLINE>
-    :
-    <BLANKLINE>
-    fsa4?
-    <BLANKLINE>
-    2
-    
-Types of errors
-=====
-
-The function does not receive any numerical data (int, float)
-
-::
-    >>> text_indentation(44)
+test text not str
+    >>> text_indentation(5)
     Traceback (most recent call last):
+    ...
     TypeError: text must be a string
 
-    >>> text_indentation(str(44.?))
-    Traceback (most recent call last):
-    SyntaxError: invalid syntax
 
-    >>> text_indentation(str(44.:holberton))
-    Traceback (most recent call last):
-    SyntaxError: invalid syntax
+test output
+    >>> text_indentation("Lorem? ipsum dolor sit amet, consectetur adipiscing elit.")
+    Lorem?
+    <BLANKLINE>
+    ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
 
+
+Testing missing args
     >>> text_indentation()
     Traceback (most recent call last):
+    ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+

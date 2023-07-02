@@ -21,6 +21,7 @@ How to Use 2-matrix_divided.py
 
 This module defines a matrix division function ``matrix_divided(matrix, div)``.
 
+
 Usage
 =====
 
@@ -182,3 +183,4 @@ is raised.
     >>> print(matrix_divided(matrix, 0))
     Traceback (most recent call last):
     ZeroDivisionError: division by zero
+
