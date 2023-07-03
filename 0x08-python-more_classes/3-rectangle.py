@@ -4,7 +4,6 @@
 
 class Rectangle:
     """ represtent the class """
-
     def __init__(self, width=0, height=0):
         """ inittialize the class
         args:
@@ -63,12 +62,12 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ("")
 
-        rect  = []
+        r = []
 
         for x in range(self.__height):
-            [rect.append('#') for a in range(self.__width)]
+            [r.append('#') for a in range(self.__width)]
 
             if x != self.__height - 1:
-                rect.append("\n")
+                r.append("\n")
 
-            return ("".join(rect))
+        return ("".join(r))
