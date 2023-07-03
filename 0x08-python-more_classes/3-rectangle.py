@@ -53,7 +53,7 @@ class Rectangle:
 
     def perimeter(self):
         """ return the pre of class """
-        if self.__width == 0 or slef.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return (0)
 
         return ((self.__width * 2) + (self.__height * 2))
@@ -64,8 +64,8 @@ class Rectangle:
             return ("")
 
         r = []
-
         for x in range(self.__height):
+
             [r.append('#') for a in range(self.__width)]
 
             if x != self.__height - 1:
