@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-"""define a Rectangle class."""
+"""Defines Rectangle class."""
 
 
 class Rectangle:
-    """Represent rectangle."""
+    """represent a rectangle.
+
+    Attributes:
+        number_of_instances (int): The number of Rectangle instances.
+    """
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
@@ -12,6 +18,8 @@ class Rectangle:
             width : The width of the new rectangle.
             height : The height of the new rectangle.
         """
+
+        type(self).number_of_instances += 1
 
         self.width = width
         self.height = height
@@ -23,7 +31,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """ set the value """
+        """ set the value of width """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
@@ -39,7 +47,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """ set the value of height """
+        " set the height """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
 
@@ -62,24 +70,25 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle.
         """
-
         if self.__width == 0 or self.__height == 0:
             return ("")
 
         r = []
+
         for x in range(self.__height):
-            [rect.append('#') for u in range(self.__width)]
+            [rect.append('#') for a in range(self.__width)]
             if x != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
+                r.append("\n")
+        return ("".join(r))
 
     def __repr__(self):
-        """Return string of the Rectangle."""
+        """Return string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
 
         return (r)
 
     def __del__(self):
-        """Print a message for deletion of a Rectangle."""
+        """Print message for every deletion of a Rectangle."""
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
