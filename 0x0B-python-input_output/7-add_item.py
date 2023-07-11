@@ -1,17 +1,18 @@
 #!/usr/bin/python3
 """ define the model sys """
-from sys import argv
-from os import path
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-if path.exists('add_item.json'):
-    json_file = load_from_json_file('add_item.json')
-else:
-    json_file = []
+import sys
 
-for x in range(1, len(argv)):
-    json_file.append(argv[x])
+if __name__ == '__main__':
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-save_to_json_file(json_file, 'add_item.json')
+    load_from_json_file = \
+        __import__('6-load_from_json_file').load_from_json_file
+
+    try:
+        nums = load_from_json_file("add_item.json")
+    except FileNotFoundError:
+        it = []
+    it.extend(sys.argv[1:])
+    save_to_json_file(it, "add_item.json")
