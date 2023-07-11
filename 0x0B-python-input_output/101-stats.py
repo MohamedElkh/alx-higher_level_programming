@@ -8,12 +8,11 @@ def print_st(size, status):
     print("File size: {}".format(size))
 
     for k in sorted(status):
-        print("{}: {}".format(k,status[k]))
+        print("{}: {}".format(k, status[k]))
 
 
 if __name__ == "__main__":
     import sys
-
 
     size = 0
     status = {}
