@@ -147,7 +147,9 @@ class Base:
                 tur.left(90)
                 tur.forward(rct.height)
                 tur.left(90)
+
             tur.hideturtle()
+
         tur.color("#b5e3d8")
 
         for sq in list_squares:
@@ -161,5 +163,7 @@ class Base:
                 tur.left(90)
                 tur.forward(sq.height)
                 tur.left(90)
+
             tur.hideturtle()
+
         tur.exitonclick()
