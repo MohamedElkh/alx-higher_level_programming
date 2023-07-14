@@ -100,11 +100,11 @@ class Rectangle(Base):
         """ funct to update the rectangle
         args:
             *args: new value
-                - 1st argument represents id attribute
-                - 2nd argument represents width attribute
-                - 3rd argument represent height attribute
-                - 4th argument represents x attribute
-                - 5th argument represents y attribute
+                - 1 argument represents id attribute
+                - 2 argument represents width attribute
+                - 3 argument represent height attribute
+                - 4 argument represents x attribute
+                - 5 argument represents y attribute
             **kwargs: new key or value pairs or attr
         """
         if args and len(args) != 0:
@@ -148,6 +148,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return the print() and str() representation of the Rectangle."""
+
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
