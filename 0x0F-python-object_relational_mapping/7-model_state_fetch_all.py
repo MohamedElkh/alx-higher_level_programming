@@ -19,4 +19,4 @@ if __name__ == '__main__':
     states = see.query(State).order_by(State.id).all()
 
     for st in states:
-        print("{}: {}".format(st.id, states.name))
+        print("{}: {}".format(st.id, st.name))
