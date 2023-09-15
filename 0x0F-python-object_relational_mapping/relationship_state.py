@@ -3,16 +3,17 @@
 state conatins class and base
 """
 from sqlalchemy import Column, Integer, String, MetaData
-from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import Base, City
+from sqlalchemy.orm import relationship
+
+data = MetaData
+Base = declarative_base(metadata=data)
 
 
 class State(Base):
     """
     class with id and name attr of each state
     """
-
     __tablename_ = 'states'
 
     id = Column(Integer, unique=True, nullable=False, primary_key=True)

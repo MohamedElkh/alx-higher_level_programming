@@ -2,18 +2,15 @@
 """
 conatin the class of definition of city
 """
-from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
 
 
 class City(Base):
     """
     the class that define each city
     """
-
     __tablename__ = 'cities'
 
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
