@@ -7,9 +7,6 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from relationship_city import Base, City
 
-data = MetaData()
-Base = declarative_base(metadata=data)
-
 
 class State(Base):
     """
