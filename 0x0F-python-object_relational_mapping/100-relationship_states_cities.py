@@ -3,8 +3,8 @@
 create the state california with san fransisco
 """
 import sys
-from relationship_state import Base, State
-from relationship_city import City
+from relationship_state import State
+from relationship_city import Base, City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -18,11 +18,6 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=eng)
     see = Session()
 
-    newst = State(name='California')
-    newct = City(name='San Francisco')
+    see.add(City(name="San Francisco", state=State(name="California")))
 
-    newst.cities.append(newct)
-
-    see.add(newst)
-    see.add(newct)
     see.commit()

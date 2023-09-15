@@ -5,6 +5,7 @@ state conatins class and base
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from relationship_city import Base, City
 
 data = MetaData()
 Base = declarative_base(metadata=data)
@@ -20,4 +21,4 @@ class State(Base):
     id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
 
-    cities = relationship("City", backref="states")
+    cities = relationship("City", backref="states", cascade="all, delete")
