@@ -9,13 +9,13 @@ from sqlalchemy import create_engine
 
 
 if __name__ == '__main__':
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                         format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                         pool_pre_ping=True)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                         sys.argv[1], sys.argv[2], sys.argv[3]),
+                        pool_pre_ping=True)
 
     Session = sessionmaker(bind=eng)
-    session = Session()
+    see = Session()
 
-    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    st = see.query(State).filter(State.name == sys.argv[4]).first()
 
-    print("Not found" if not state else  state.id)
+    print("Not found" if not st else st.id)
