@@ -9,14 +9,14 @@ from sqlalchemy import create_engine
 
 
 if __name__ == '__main__':
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                         format(sys.argv[1], sys,argv[2], sys.argv[3]),
-                         pool_pre_ping=True)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                         sys.argv[1], sys.argv[2], sys.argv[3]),
+                        pool_pre_ping=True)
 
     Session = sessionmaker(bind=eng)
-    session = Session()
+    see = Session()
 
-    states = session.query(State).filter(State.name.like('%a%')).all()
+    stat = see.query(State).filter(State.name.like('%a%')).all()
 
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    for st in stat:
+        print("{}: {}".format(st.id, st.name))
