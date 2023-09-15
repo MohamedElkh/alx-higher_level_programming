@@ -9,15 +9,15 @@ from sqlalchemy import create_engine
 
 
 if __name__ == '__main__':
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                         format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                         pool_pre_ping=True)
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+                         sys.argv[1], sys.argv[2], sys.argv[3]),
+                        pool_pre_ping=True)
 
     Session = sessionmaker(bind=eng)
-    session = Session()
+    see = Session()
 
-    update = session.query(State).filter(State.id == 2).first()
+    update = see.query(State).filter(State.id == 2).first()
 
     if update:
         update.name = 'New Mexico'
-        session.commit()
+        see.commit()
