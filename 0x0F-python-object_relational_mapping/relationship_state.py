@@ -2,12 +2,10 @@
 """
 state conatins class and base
 """
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-data = MetaData
-Base = declarative_base(metadata=data)
+from relationship_city import Base, City
 
 
 class State(Base):
@@ -16,7 +14,7 @@ class State(Base):
     """
     __tablename_ = 'states'
 
-    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
 
     cities = relationship("City", backref="states", cascade="all, delete")
