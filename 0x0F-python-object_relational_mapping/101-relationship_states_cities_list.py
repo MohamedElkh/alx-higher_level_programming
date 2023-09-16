@@ -18,10 +18,8 @@ if __name__ == '__main__':
 
     Session = sessionmaker(bind=eng)
     see = Session()
-    stt = see.query(State).outerjoin(City).order_by(State.id, City.id).all()
 
-    for state in stt:
-        print("{}: {}".format(state.id, state.name))
-
-        for city in state.cities:
-            print("     {}: {}".format(city.id, city.name))
+    for st in see.query(State).order_by(State.id):
+        print("{}: {}".format(st.id, st.name))
+        for city in st.cities:
+            print("   {}: {}".format(city.id, city.name))
