@@ -8,6 +8,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
     """
     the class that define each city
