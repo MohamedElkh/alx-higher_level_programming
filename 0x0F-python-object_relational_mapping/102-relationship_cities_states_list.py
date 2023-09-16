@@ -14,8 +14,10 @@ if __name__ == '__main__':
                          format(sys.argv[1], sys.argv[2], sys.argv[3]),
                          pool_pre_ping=True)
 
+    Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     see = Session()
 
-    for city in see.query(City).order_by(City.id):
-        print("{}: {} -> {}".format(city.id, city.name, state.name))
+    for city in see.query(City).all():
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+    see.close()
