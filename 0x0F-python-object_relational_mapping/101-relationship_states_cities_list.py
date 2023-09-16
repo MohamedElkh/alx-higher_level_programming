@@ -3,7 +3,7 @@
 lists all state objects city
 """
 import sys
-from relationship_city import City
+from relationship_city import Base, City
 from relationship_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
