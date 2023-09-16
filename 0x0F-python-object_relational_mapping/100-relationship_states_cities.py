@@ -24,6 +24,6 @@ if __name__ == '__main__':
     newS.cities.append(newC)
 
     see.add(newS)
-    see.add(newC)
+
     see.commit()
     see.close()
