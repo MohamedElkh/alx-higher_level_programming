@@ -18,7 +18,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=eng)
     see = Session()
 
-    xx = see.query(State).order_by(State.id)
+    xx = see.query(State).all()
 
     for st in xx:
         print("{}: {}".format(st.id, st.name))
