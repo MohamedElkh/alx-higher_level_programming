@@ -18,5 +18,11 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=eng)
     see = Session()
 
-    see.add(City(name="San Francisco", state=State(name="California")))
+    newS = State(name='California')
+    newC = City(name='San Francisco')
+
+    newS.cities.append(newC)
+
+    see.add(newS)
+    see.add(newC)
     see.commit()
