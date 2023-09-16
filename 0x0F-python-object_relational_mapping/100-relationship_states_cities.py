@@ -26,3 +26,4 @@ if __name__ == '__main__':
     see.add(newS)
     see.add(newC)
     see.commit()
+    see.close()
