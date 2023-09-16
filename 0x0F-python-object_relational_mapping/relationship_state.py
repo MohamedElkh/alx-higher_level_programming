@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 """
-state conatins class and base
+contain state class abd base
 """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from relationship_city import Base, City
+
+data = MetaData()
+Base = declarative_base(metadata=data)
 
 
 class State(Base):
     """
-    class with id and name attr of each state
+    this class with id and name attr of each state
     """
-    __tablename_ = 'states'
+    __tablename__ = 'states'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
-
-    cities = relationship("City", backref="states", cascade="all, delete")
+    cities = relationship("City", backref="states")
