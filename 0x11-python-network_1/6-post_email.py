@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""script that post the email"""
 import sys
 import requests
 
